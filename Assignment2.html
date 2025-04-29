@@ -1,0 +1,216 @@
+<script>
+
+
+   /*
+    1. Print the occurence of each character in a string
+   input: 'entertainment'
+   output: { e:3 , n:2 , t: 3 ....}
+   */
+
+   //let input = "entertainment";
+   //let input = "MOMDAD";
+   let input ='hello world';
+
+   let frequency = {};  // empty object
+
+    for (let i = 0; i < input.length; i++) {
+         let char = input[i];
+
+        if (frequency[char] === undefined) {
+            frequency[char] = 1;
+        } else {
+        frequency[char] = frequency[char] + 1;
+        }
+    }
+
+    console.log(frequency);
+
+    /*
+
+    2. Print the character which is repeated max no of times
+   input: 'hello world'
+   output : 'L'
+
+    */
+
+// Now, find maximum occurrence
+let maxChar = '';
+let maxCount = 0;
+
+for (let char in frequency) {
+    if (frequency[char] > maxCount) {
+        maxCount = frequency[char];
+        maxChar = char;
+    }
+}
+
+console.log(`Maximum occurred character is '${maxChar}' with ${maxCount} times`);
+
+//
+
+/*
+Swap The case for Each Character in a string 
+   input: 'Hello World'
+   output: 'hELLO wORLD'
+*/
+
+let input1="Hello World";
+let output ="";
+
+for(let i=0; i<input1.length; i++){
+    let char = input1[i];
+
+    if(char>='A' && char<='Z'){
+        output+=char.toLowerCase();
+    }else if(char>='a' && char<='z'){
+        output+=char.toUpperCase();
+
+    }else{
+        output+=char;
+    }
+
+    }
+    console.log(output);
+
+
+    /*
+    Print the Abbreviation for a string
+   input: 'Rabindra Nath Tagore'
+   output: 'R. N. tagore'
+
+   */
+
+   let inp = "Rabindra Nath Tagore";
+
+   let arr = inp.split(' ');
+   console.log(arr);
+   let oup = "";
+
+   for (let i=0;i<arr.length;i++){
+        let w=arr[i];
+
+        if(i==arr.length-1){
+            oup += w.toLowerCase();
+        }else{
+            let firstletter = w[0];
+            oup+=firstletter.toUpperCase()+". ";
+        }
+
+   }
+   console.log(oup);
+
+   /*
+   Shift the characters by the next character, the output should have the next char of input
+   input:  'abcxyz'
+   output: 'bcdyza'
+   */
+
+   let ip='abcxyz';
+   let op="";
+
+   for(let i=0;i<ip.length;i++){
+        let letter = ip[i];
+
+        if(letter=='z'){
+            op+='a';
+        }else{
+            let nextLetter = String.fromCharCode(letter.charCodeAt(0)+1);
+            op+=nextLetter;
+        }
+   }
+   console.log(op);
+
+
+//    6. Ask user to enter a sequence of parantheses and validate 
+//    input: '([{ }])'
+//    output : true
+
+    let input_array = "([{}])";
+
+    let previousLength;
+    do {
+         previousLength = input_array.length;
+
+        input_array = input_array.replace("()", "");
+        input_array = input_array.replace("[]", "");
+        input_array = input_array.replace("{}", "");
+
+    } while (input_array.length !== previousLength);
+
+    if (input_array.length === 0) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+
+
+    //Ask user to enter a 3 letter word, print all the permutations using those 3 letters.
+    //input: 'ABC'
+    //output: ABC , ACB , BCA, BAC ...
+
+    let word = prompt("Give me 3 letters: ");
+    let output_word ="";
+
+    for(let a=0;a<3;a++){
+        for(let b=0;b<3;b++){
+            for(let c=0;c<3;c++){
+                if(a!==b && b!==c && c!==a){
+                    output_word=word[a]+word[b]+word[c];
+                    console.log(output_word);
+                }
+            }
+        }
+    }
+
+
+
+
+//    Ask user to enter a number and convert that to Roman value
+//    input:   9    12
+//    output : IX   XII
+
+    let num = [9, 12];
+    for (let i = 0; i <= num.length; i++) {
+        switch (num[i]) {
+            case 1: console.log("I"); break;
+            case 2: console.log("II"); break;
+            case 3: console.log("III"); break;
+            case 4: console.log("IV"); break;
+            case 5: console.log("V"); break;
+            case 6: console.log("VI"); break;
+            case 7: console.log("VII"); break;
+            case 8: console.log("VIII"); break;
+            case 9: console.log("IX"); break;
+            case 10: console.log("X"); break;
+            case 11: console.log("XI"); break;
+            case 12: console.log("XII"); break;
+        }
+
+    }
+
+    //Ask user to enter a roman string and convert that to integer value
+   //input:   IX    XII
+   //output : 9     12
+
+   let roman = ['IX', 'XII'];
+    for (let i = 0; i < roman.length; i++) {
+        switch (roman[i]) {
+            case 'I': console.log(1); break;
+            case 'II': console.log(2); break;
+            case 'III': console.log(3); break;
+            case 'IV': console.log(4); break;
+            case 'V': console.log(5); break;
+            case 'VI': console.log(6); break;
+            case 'VII': console.log(7); break;
+            case 'VIII': console.log(8); break;
+            case 'IX': console.log(9); break;
+            case 'X': console.log(10); break;
+            case 'XI': console.log(11); break;
+            case 'XII': console.log(12); break;
+        }
+    }
+
+
+
+
+</script>

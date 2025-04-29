@@ -1,0 +1,143 @@
+<script>
+// Assignments
+    /* 1. WAP to reverse a string
+	        input:- 'sachin'
+	        output:- 'nihcas'
+    */
+
+    
+
+    let st = "sachin";
+    let rev = st.split('');
+    console.log(rev);
+    let rev1 = rev.reverse();
+    console.log(rev1);
+    let rev2 = rev1.join('');
+    console.log(rev2);
+    
+    let rever = st.split('').reverse().join('');
+    console.log(rev2);
+    console.log(rever);
+
+    
+
+/*
+        2. WAP to reverse words
+	input:- 'This is javascript class'
+	output:- 'class javascript is this'
+    */
+
+    let sentence2 = 'This is javascript class';
+    let reversed = sentence2.split(' ').reverse().join(' ');
+
+    console.log(reversed);
+
+    
+
+/*
+        Assignment 3: WAP to print the first non-repeated character in a string
+            input:- 'entertainment'
+            output:- r
+    */
+    
+    let wordd ='entertainment';
+    let result = '';
+    for (let char of wordd){
+        if(wordd.indexOf(char)==wordd.lastIndexOf(char)){
+            result = char;
+            break;
+        }
+    }
+    console.log(result);
+    
+
+/*
+    WAP to print a string in title case
+	input:- 'this is javascript class'
+   output:- 'This Is Javascript Class'
+    */
+
+    
+    let sentence1 = 'this is javascript class';
+    let wordss = sentence1.split(' ');
+    let titleCase = '';
+
+    for(let i = 0; i < wordss.length; i++) {
+        let word = wordss[i];
+        let capitalized = word.charAt(0).toUpperCase() + word.slice(1);
+        titleCase += capitalized + ' ';
+    }
+
+    titleCase = titleCase.trim();   
+    console.log(titleCase);
+    
+
+// WAP to find longest word in a sentence
+	// input:- 'this is javascript class'
+    // output:- javascript
+	
+    let str = "this is javascript class";
+    let words = str.split(' ');
+    let longest_word ='';
+
+    for(let t of words){
+        if(t.length>longest_word.length){
+            longest_word=t;
+        }
+    }
+    console.log(longest_word);
+
+    //     WAP to print Account number
+        //    input:- '12345678987'
+        //    output:- '12*******87'
+
+        let accNum = "12345678987";
+        let masked = accNum.slice(0,2) + '*'.repeat(accNum.length - 4) + accNum.slice(-2);
+        console.log(masked);   
+
+    // WAP to print Credit-card number
+        //  input:- '1111222233334444'
+        //  output:- '1111-2222-3333-4444'
+
+        let ccNum = "1111222233334444";
+        let formatted = ccNum.match(/.{1,4}/g).join('-');
+        console.log(formatted);   
+
+    //WAP to check if 2 strings are anagram or not
+	    //'listen' - 'silent'    anagram(every char of str1 should be there in str2)
+
+        let strA = "listen";
+        let strB = "silent";
+
+        let isAnagram = strA.split('').sort().join('') === strB.split('').sort().join('');
+        console.log(isAnagram ? "Anagram" : "Not Anagram");   
+
+        //WAP to remove special character from a string
+           // input:- 'hello@#hi&'
+           // output:- 'hellohi'
+
+           let s1 = "hello@#hi&";
+           let s2 = s1.replace(/[^a-zA-Z0-9]/g, '');
+            console.log(s2);   
+
+        // WAP to move all the special characters to the end of the string
+	        // input:- 'hello@#hi&'
+            // output:- 'hellohi@#&'
+
+            let inputStr = "hello@#hi&";
+            let letters = inputStr.match(/[a-zA-Z0-9]/g).join('');
+            let specials = inputStr.match(/[^a-zA-Z0-9]/g).join('');
+            console.log(letters + specials);   
+
+        
+
+
+
+
+
+
+
+
+
+
+</script>
